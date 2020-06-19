@@ -144,9 +144,13 @@ function __init__()
         rm(cachefile)
         error("Your set-up changed, and LLVM.jl needs to be reconfigured. Please load the package again.")
     end
-
-    _install_handlers()
-    _install_handlers(GlobalContext())
+    @show libllvm
+    try
+      _install_handlers()
+      _install_handlers(GlobalContext())
+    catch e
+      @show e
+    end
 end
 
 end
