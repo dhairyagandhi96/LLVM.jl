@@ -149,7 +149,7 @@ function __init__()
       _install_handlers()
       _install_handlers(GlobalContext())
     catch e
-      @show e
+      println(e)
     end
 end
 
